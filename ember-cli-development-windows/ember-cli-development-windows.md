@@ -163,3 +163,49 @@ npm install -g ember-cli bower
 ```
 This will install all the dependencies needed to be able to compile `ember` projects
 and to be able to start `samba`.
+
+### Configure Samba
+
+This section is a bit more involved as we have to edit a configuration file and run
+some crazy commands, but let's get started. So first of all you'll need to edit
+`/etc/samba/smb.conf` to have the following contents:
+
+```
+[global]
+workgroup = WORKGROUP
+server string = Samba Server %v
+security = user
+map to guest = bad user
+name resolve order = bcast host
+dns proxy = no
+
+[ember-workspace]
+path = /samba/ember-workspace
+browsable = yes
+writable = yes
+guest ok = no
+read only = no
+```
+
+This is going to be the Samba configuration that we need to access the files from
+Windows. If your `WORKGROUP` is different, make sure to edit it otherwise leave as-is.
+
+Next we need to create the folder that we want to share and give it the proper permissions.
+Run these commands using `sudo`:
+
+```sh
+share=/samba/ember-workspace
+mkdir -p $share
+chmod -R 0755 $share
+chown -R vagrant:vagrant $share
+```
+
+Next we need to give our samba user,`vagrant`, a password:
+
+    sudo smbpasswd -a vagrant
+
+Finally, we must restart the samba service:
+
+    sudo service smbd restart
+
+DONE!
