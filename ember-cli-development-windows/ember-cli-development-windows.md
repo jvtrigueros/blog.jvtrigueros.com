@@ -113,8 +113,8 @@ _Brilliant!_
 
 ### Vagrantfile
 
-To get this setup working, you'll need to have [Vagrant installed](https://docs.vagrantup.com/v2/installation/)
-and (VirtualBox installed)[https://www.virtualbox.org/wiki/Downloads].
+To get this setup working, you'll need to have [Vagrant](https://docs.vagrantup.com/v2/installation/)
+and [VirtualBox](https://www.virtualbox.org/wiki/Downloads) installed.
 Here's the `Vagrantfile` I'm using:
 
 ```
