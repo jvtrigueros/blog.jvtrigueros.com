@@ -111,3 +111,32 @@ and I can edit the code on my favourite IDE!
 
 _Brilliant!_
 
+### Vagrantfile
+
+To get this setup working, you'll need to have [Vagrant installed](https://docs.vagrantup.com/v2/installation/)
+and (VirtualBox installed)[https://www.virtualbox.org/wiki/Downloads].
+Here's the `Vagrantfile` I'm using:
+
+```
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "ubuntu/trusty64"
+
+  # Ember default port
+  config.vm.network "forwarded_port", guest: 4200, host: 4200
+
+  # LiveReload default port
+  config.vm.network "forwarded_port", guest: 35729, host: 35729
+
+  config.vm.hostname = "ember-server"
+  config.vm.network "public_network", ip: "192.168.0.160"
+end
+```
+
+This will tell Vagrant create an Ubuntu 14.04 VM and give it a static IP. In addition,
+this also tells VirtualBox to forward two ports from the guest to the host. So
+ports 4200 and 35729 will be accessible via http://localhost:4200 and http://localhost:35729.
+
+Run `vagrant up` and this will set up your VM and you're ready to start installing
+dependencies.
