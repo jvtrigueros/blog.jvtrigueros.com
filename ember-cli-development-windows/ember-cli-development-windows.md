@@ -97,5 +97,17 @@ way faster.
 
 But it just looked too ugly.
 
-So this is when I came up with this solution. Using Vagrant and a Samba so that I
-can access those files from Windows and have the site built in the VM.
+I was at a bind, `ember` compiles flawlessly in Linux but the IDE looks horrendous,
+but it looks just fine in Windows but the compilation process is a pain. I needed
+a hybrid solution.
+
+## Vagrant and Samba
+
+The solution was to use Vagrant to spawn a Linux VM that is running a Samba service
+that exposes a network folder that both the Windows host and Linux guest can access.
+
+The Vagrant VM will compile the changes that are made to the `ember-cli` project
+and I can edit the code on my favourite IDE!
+
+_Brilliant!_
+
