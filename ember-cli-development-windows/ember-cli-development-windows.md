@@ -140,3 +140,26 @@ ports 4200 and 35729 will be accessible via http://localhost:4200 and http://loc
 
 Run `vagrant up` and this will set up your VM and you're ready to start installing
 dependencies.
+
+### Install dependencies
+
+By this point, your VM should already be running and you should be able to ssh into
+it by running `vagrant ssh`. Once you're in, you need to run the following commands
+as `sudo` to install the dependencies needed:
+
+```sh
+# Add git ppa repository
+add-apt-repository ppa:git-core/ppa
+
+# Install Ubuntu build dependencies
+curl -sL https://deb.nodesource.com/setup | bash -
+apt-get install -y nodejs git build-essential automake
+
+# Install Samba
+apt-get install -y samba samba-common python-glade2 system-config-samba
+
+# Install ember-cli and bower
+npm install -g ember-cli bower
+```
+This will install all the dependencies needed to be able to compile `ember` projects
+and to be able to start `samba`.
