@@ -230,3 +230,39 @@ and whatever password you chose when running the `smbpasswd` command.
 
 Once you authenticate, you can choose to mount the drive and use it as if it on
 your local drive.
+
+## Results
+
+Running the same application from my [initial experience](#initial-experience)
+resulted in this:
+
+```sh
+vagrant@ember-server:~/ember-workspace/awesomesauce$ ember serve
+version: 0.1.12
+Livereload server on port 35729
+Serving on http://0.0.0.0:4200/
+
+Build successful - 404ms.
+
+Slowest Trees                  | Total
+-------------------------------+----------------
+Concat: Vendor                 | 114ms
+SixToFive                      | 36ms
+ES3SafeFilter                  | 30ms
+ES6Modules                     | 29ms
+JSHint app- QUnit              | 21ms
+
+file changed templates/gravy.hbs
+
+Build successful - 230ms.
+
+Slowest Trees                  | Total
+-------------------------------+----------------
+Concat: Vendor                 | 79ms
+SourcemapConcat                | 25ms
+SourcemapConcat                | 15ms
+```
+
+I don't know about you, but this is very awesome! This is a very long process, so
+I'd recommend you fork my project in [Github](https://github.com/jvtrigueros/ember-vagrant)
+that's ready to go.
