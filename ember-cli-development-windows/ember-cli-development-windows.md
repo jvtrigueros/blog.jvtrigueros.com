@@ -16,7 +16,7 @@ Install `ember-cli`
 
 Create an application
 
-    ember new app awesomesauce
+    ember new awesomesauce
 
 Add a route
 
