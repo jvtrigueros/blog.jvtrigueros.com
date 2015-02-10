@@ -209,3 +209,24 @@ Finally, we must restart the samba service:
     sudo service smbd restart
 
 DONE!
+
+_Optional: You may want to create a symlink to the `ember-workspace` into your vagrant home_
+
+    ln -s /samba/ember-workspace /home/vagrant/ember-workspace
+
+### Configure Windows
+
+We're almost there, all we need to do now is authenticate against our Samba server.
+Open a new `explorer.exe` window and the network location. If you followed the defaults
+it'l be named `EMBER-SERVER`.
+
+![EMBER-SERVER](ember-network.png)
+
+Double-clicking on the network location will reveal the share, `ember-workspace`.
+Trying to open that will bring up a login prompt, in which you'll type in the user `vagrant`
+and whatever password you chose when running the `smbpasswd` command.
+
+![Authenticate](ember-auth.png)
+
+Once you authenticate, you can choose to mount the drive and use it as if it on
+your local drive.
