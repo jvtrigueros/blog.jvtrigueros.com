@@ -266,3 +266,9 @@ SourcemapConcat                | 15ms
 I don't know about you, but this is very awesome! This is a very long process, so
 I'd recommend you fork my project in [Github](https://github.com/jvtrigueros/ember-vagrant)
 that's ready to go.
+
+## Problems
+
+As with anything I touch, nothing every works 100%. I'm having some issues with Webstorm
+being a bit slow on indexing and being able to realize that files have changed. If
+anyone has a solution for that I'd greatly appreciate a note or comment below.
