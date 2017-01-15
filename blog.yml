@@ -1,0 +1,20 @@
+---
+- hosts: blog
+  become: yes
+
+  vars:
+    ghost:
+      install_dir: /var/www
+      version: 0.11.4
+
+  pre_tasks:
+    - name: apt-get update
+      apt: update_cache=yes
+
+    - name: ensure installation requirements are installed
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - curl
+        - unzip
