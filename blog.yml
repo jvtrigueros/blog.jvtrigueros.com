@@ -18,3 +18,23 @@
       with_items:
         - curl
         - unzip
+
+    - name: verify that Node.js is installed
+      command: node --version
+      ignore_errors: yes
+      register: node
+
+    - name: download Node.js setup script
+      get_url:
+        url: https://deb.nodesource.com/setup_4.x
+        dest: /var/cache/node-setup.sh
+      when: node|failed
+
+    - name: install Node.js apt repository
+      command: bash /var/cache/node-setup.sh
+      when: node|failed
+
+    - name: ensure Node.js is installed
+      apt:
+        name: nodejs
+        state: present
