@@ -5,7 +5,7 @@
   vars:
     ghost:
       install_dir: /var/www
-      version: 0.11.4
+      version: {{ ghost.version }}
 
   pre_tasks:
     - name: apt-get update
@@ -39,3 +39,12 @@
       apt:
         name: nodejs
         state: present
+
+  tasks:
+    - name: download ghost
+      get_url:
+        url: https://github.com/TryGhost/Ghost/releases/download/{{ ghost.version }}/Ghost-{{ ghost.version }}.zip
+        dest: /var/cache/ghost.zip
+
+    - name: extract ghost
+      shell: mkdir -p /var/www && unzip /var/cache/ghost.zip -d /var/www/ghost
