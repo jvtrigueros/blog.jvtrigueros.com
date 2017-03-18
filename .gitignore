@@ -29,3 +29,4 @@ node_modules
 Ghost/
 Thumbs.db
 *~
+*.retry
