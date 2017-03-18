@@ -1,11 +1,11 @@
 ---
-- hosts: blog
+- hosts: localhost
   become: yes
 
   vars:
     ghost:
       install_dir: /var/www
-      version: {{ ghost.version }}
+      version: "0.11.7"
 
   pre_tasks:
     - name: apt-get update
