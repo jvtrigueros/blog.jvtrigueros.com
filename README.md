@@ -16,13 +16,13 @@ I'm using the a Docker container generously provided by the Jekyll peeps.
 
 I'm running this command on Windows to create blog from scratch:
 
-    docker run --rm -v %userprofile%/workspace/blog.jvtrigueros.com/jekyll:/srv/jekyll jekyll/jekyll jekyll new .
+    docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll jekyll new .
 
 ## Developing
 
 To start a Jekyll development server, run the Docker container using the command bellow:
 
-    docker run --rm --name jk -p 4000:4000 -e POLLING=true -v %userprofile%/workspace/blog.jvtrigueros.com/src:/srv/jekyll jekyll/jekyll jekyll serve
+    docker run --rm --name jk -p 4000:4000 -e POLLING=true -v %cd%/src:/srv/jekyll jekyll/jekyll jekyll serve
 
 It's very intense, but at a high level:
 
@@ -46,7 +46,7 @@ needed.
 Before deploying, we need to setup `s3_website.yml`:
 
 ```bash
-> docker run --rm -v %userprofile%/workspace/blog.jvtrigueros.com/jekyll:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+> docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
 
 > jekyll --help # This will install Java
 
@@ -58,4 +58,4 @@ Before deploying, we need to setup `s3_website.yml`:
 
 To deploy, the command is similar to the one above, but it'll only do the build and push:
 
-    docker run --rm -v %userprofile%/workspace/blog.jvtrigueros.com/jekyll:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+    docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
