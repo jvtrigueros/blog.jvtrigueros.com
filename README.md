@@ -22,12 +22,12 @@ I'm running this command on Windows to create blog from scratch:
 
 To start a Jekyll development server, run the Docker container using the command bellow:
 
-    docker run --rm --name jk -p 4000:4000 -e POLLING=true -v %cd%/src:/srv/jekyll jekyll/jekyll jekyll serve
+    docker run --rm -it --name jk -p 4000:4000 -e POLLING=true -v %cd%/src:/srv/jekyll jekyll/jekyll jekyll serve
 
 It's very intense, but at a high level:
 
 - `--rm` will remove the container when stopped.
-- `--name` sets a name for the container (more on that later).
+- `--name` sets a name for the container, just in case we need to `exec` into the container later.
 - `-p 4000:4000` binds host port to container port, so that we can access the site (may not need this)
 - `-e POLLING=true` sets environment variable to force jekyll to poll filesystem because we're using Docker for Windows
   - More on this on the [Caveats](https://github.com/jekyll/docker/wiki/Usage:-Running#caveats) section.
@@ -35,8 +35,13 @@ It's very intense, but at a high level:
 
 ### Bonus: Live Reload!
 
-The Docker command above will rebuild the blog when file changes are detected but there's nothing that will automatically
-refresh your browser's
+The Docker command above will rebuild the blog when file changes are detected but nothing refreshes your browser, forcing
+you to `alt+tab` boo. This can be solved by installing `browser-sync` and have it watch the `_site` directory:
+
+```bash
+> npm install -g browser-sync
+> browser-sync start -s %cd%\src\_site -f %cd%\src\_site --reload-delay 300 --no-open
+```
 
 ## Deploying
 
@@ -55,7 +60,8 @@ Before deploying, we need to setup `s3_website.yml`:
 > s3_website cfg apply # This will create the s3 bucket etc
 ```
 
+In order for `s3_website` to be able to push to S3, it needs Java installed. So we created `apk.txt` and mounted it. See more on this on this [Github issue](https://github.com/jekyll/docker/issues/142) (specially my comment at the end).
 
 To deploy, the command is similar to the one above, but it'll only do the build and push:
 
-    docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+    docker run --rm -v %cd%/src:/srv/jekyll -v %cd%/apk.txt:/srv/jekyll/.apk jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
