@@ -24,6 +24,9 @@ sass:
   style: :compressed
   sass_dir: _sass
 
+gems:
+  - jekyll-paginate
+
 # Build settings
 markdown  : kramdown
 permalink : /:title/
