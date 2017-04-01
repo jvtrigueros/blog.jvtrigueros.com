@@ -30,3 +30,8 @@ gems:
 # Build settings
 markdown  : kramdown
 permalink : /:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - s3_website.yml
