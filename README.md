@@ -76,11 +76,22 @@ Before deploying, we need to setup `s3_website.yml`:
 > s3_website cfg apply # This will create the s3 bucket etc
 ```
 
+To be able to keep `s3_website.yml` under version control, we'll change the first few lines to obtain
+secrets from environment variables:
+
+```yaml
+s3_id:  <%= ENV['S3_ID'] %>
+s3_secret: <%= ENV['S3_SECRET'] %>
+```
+
+More information on this under the [Using environment variables](https://github.com/laurilehmijoki/s3_website#using-environment-variables) section of the `s3_website`
+README.
+
 In order for `s3_website` to be able to push to S3, it needs Java installed. So we created `apk.txt` and mounted it. See more on this on this [Github issue](https://github.com/jekyll/docker/issues/142) (specially my comment at the end).
 
 To deploy, the command is similar to the one above, but it'll only do the build and push:
 
-    docker run --rm -v %cd%/src:/srv/jekyll -v %cd%/apk.txt:/srv/jekyll/.apk jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+    docker run --rm -v %cd%/src:/srv/jekyll -v %cd%/apk.txt:/srv/jekyll/.apk -e S3_ID=... -e S3_SECRET=... jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
 
 The previous command is great for CI/CD, but if you'll be donig a lot of pushing locally, build a
 deploy image:
@@ -89,7 +100,9 @@ deploy image:
 
 Then you can proceed to run `s3_commands` without the initial overhead:
 
-    docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:deploy s3_website push
+    docker run --rm -v %cd%/src:/srv/jekyll --env-file .env jekyll/jekyll:deploy s3_website push
+
+**Note: For convenience, you can create a `.env` file with the S3_ID and S3_SECRET variables.**
 
 A few things to note about this approach:
 
