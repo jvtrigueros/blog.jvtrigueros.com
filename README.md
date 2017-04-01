@@ -17,8 +17,13 @@ First off, we need to add the zetsu repo as a remote
 
     git remote add -f zetsu https://github.com/nandomoreirame/zetsu.git
 
-Then we can clone the subtree
+Then we can clone the subtree:
 
+    git subtree add --prefix src zetsu master --squash
+
+Then after that we can update the theme if necessary using:
+
+    git fetch zetsu master
     git subtree pull --prefix src zetsu master --squash
 
 ## Setup
