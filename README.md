@@ -7,6 +7,20 @@ Every since I realized that I don't really use my DigitalOcean droplet I decided
 best that I move the stagnant blog off of DO and into S3 where storage is cheaper and I don't have
 to deal with hosting.
 
+## Theme
+
+I'll be using the theme [zetsu](https://nandomoreira.me/zetsu) with a few modifications of my own.
+Since it's not a gem-based theme, I'll be cloning the theme as a subtree and see how that works out,
+to accomplish this, I'm folowing an [Atlassian guide](https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree).
+
+First off, we need to add the zetsu repo as a remote
+
+    git remote add -f zetsu https://github.com/nandomoreirame/zetsu.git
+
+Then we can clone the subtree
+
+    git subtree pull --prefix src zetsu master --squash
+
 ## Setup
 
 I'm using the a Docker container generously provided by the Jekyll peeps.
@@ -52,11 +66,8 @@ Before deploying, we need to setup `s3_website.yml`:
 
 ```bash
 > docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
-
 > jekyll --help # This will install Java
-
 > s3_website cfg create # This will create s3_website.yml, edit the yml file with correct creds
-
 > s3_website cfg apply # This will create the s3 bucket etc
 ```
 
