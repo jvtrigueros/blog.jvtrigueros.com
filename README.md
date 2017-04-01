@@ -81,3 +81,18 @@ In order for `s3_website` to be able to push to S3, it needs Java installed. So 
 To deploy, the command is similar to the one above, but it'll only do the build and push:
 
     docker run --rm -v %cd%/src:/srv/jekyll -v %cd%/apk.txt:/srv/jekyll/.apk jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+
+The previous command is great for CI/CD, but if you'll be donig a lot of pushing locally, build a
+deploy image:
+
+    docker build -t jekyll/jekyll:deploy docker/deploy/
+
+Then you can proceed to run `s3_commands` without the initial overhead:
+
+    docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:deploy s3_website push
+
+A few things to note about this approach:
+
+- The `jekyll/jekyll:deploy` only lives locally and it needs to be created on any new machine
+- This assumes that the `_site` directory already exists via calling `jekyll build` manually or
+  having an external process build it, such as the container in the Developing section.
