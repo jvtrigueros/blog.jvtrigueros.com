@@ -15,8 +15,16 @@ disqus_shortname: grain-blog
 google_analytics: UA-59713858-1
 
 paginate: 2
-comments: true
 paginate_path: "/page/:num"
+permalink: /:year/:month/:day/:title
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
 
 sass:
   style: :compressed
