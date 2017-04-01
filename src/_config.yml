@@ -25,9 +25,8 @@ sass:
 gems:
   - jekyll-paginate
 
-# Build settings
-markdown  : kramdown
-permalink : /:title/
+markdown: kramdown
+permalink: /:year/:month/:day/:title
 
 exclude:
   - Gemfile
