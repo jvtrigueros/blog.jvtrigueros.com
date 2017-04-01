@@ -31,7 +31,9 @@ slug: single
 
     </aside>
 
-    {% include comments.html %}
+    {% if jekyll.environment == "production" %}
+      {% include comments.html %}
+    {% endif %}
 
   </div>
 </article>
