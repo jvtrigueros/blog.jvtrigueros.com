@@ -1,24 +1,30 @@
 # Site settings
-title: Zetsu
-email: zetsu@domain.com
-description: Um lindo tema feito para jekyll e com o <3
-baseurl: "/zetsu"
-url: "http://nandomoreira.me"
+title: Grain
+description: Nibbles of code, software development, and misc. tech stuff
+url: http://blog.jvtrigueros.com
 
 author:
-  name     : 'Fernando Moreira'
-  email    : hi@nandomoreira.me
-  url      : http://nandomoreira.me
-  facebook : http://facebook.com/fernando.dev
-  twitter  : http://twitter.com/nandomoreirame
+  name     : Jose V. Trigueros
+  email    : j.v.trigueros+blog@gmail.com
+  url      : http://blog.jvtrigueros.com
+  linkedin : https://www.linkedin.com/in/jvtrigueros/
+  twitter  : http://twitter.com/jvtrigueros
 
-github: https://github.com/nandomoreirame/zetsu
-disqus_shortname: "fernandomoreira"
-google_analytics: UA-52446115-1
+github: https://github.com/jvtrigueros/blog.jvtrigueros.com
+disqus_shortname: grain-blog
+google_analytics: UA-59713858-1
 
 paginate: 2
-comments: true
 paginate_path: "/page/:num"
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
 
 sass:
   style: :compressed
@@ -27,9 +33,7 @@ sass:
 gems:
   - jekyll-paginate
 
-# Build settings
-markdown  : kramdown
-permalink : /:title/
+markdown: redcarpet
 
 exclude:
   - Gemfile

@@ -1,6 +1,6 @@
 s3_id: <%= ENV['S3_ID'] %>
 s3_secret: <%= ENV['S3_SECRET'] %>
-s3_bucket: blog.jvtrigueros.com
+s3_bucket: java.jvtrigueros.com
 
 # set s3_token if using temporary credentials with a session token (eg: when assuming a role)
 # s3_token: YOUR_AWS_S3_SESSION_TOKEN
