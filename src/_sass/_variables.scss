@@ -2,11 +2,13 @@
 // Google fonts api
 @import url("//fonts.googleapis.com/css?family=Lato:400,300,400italic,700");
 @import url("//fonts.googleapis.com/css?family=Lora:400,400italic,700italic,700");
+@import url('//fonts.googleapis.com/css?family=Space+Mono:400');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
 // Our variables
 $font-family-base  : "Lato", Helvetica, Arial, sans-serif !default;
 $font-family-serif : "Lora", serif !default;
+$font-family-code  : "Space Mono", monospace !default;
 $font-size-base    : 16px !default;
 $line-height-base  : 1.6 !default;
 $small-font-size   : $font-size-base * 0.875 !default;
