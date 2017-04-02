@@ -314,7 +314,6 @@
   }
   .page-number, a {
     height: 38px;
-    line-height: 38px;
     display: inline-block;
     text-align: center;
   }
@@ -337,7 +336,7 @@
 
       &:hover {
         background: $primary-color;
-        border: none;
+        border-radius: 2px;
         color: #fff;
       }
     }
