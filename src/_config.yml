@@ -1,0 +1,41 @@
+# Site settings
+title: Grain
+description: Thoughts of a Software Developer
+url: http://blog.jvtrigueros.com
+
+author:
+  name     : Jose V. Trigueros
+  email    : j.v.trigueros+blog@gmail.com
+  url      : http://blog.jvtrigueros.com
+  linkedin : https://www.linkedin.com/in/jvtrigueros/
+  twitter  : http://twitter.com/jvtrigueros
+
+github: https://github.com/jvtrigueros/blog.jvtrigueros.com
+disqus_shortname: grain-blog
+google_analytics: UA-59713858-1
+
+paginate: 2
+paginate_path: "/page/:num"
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
+
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+gems:
+  - jekyll-paginate
+
+markdown: redcarpet
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - s3_website.yml
