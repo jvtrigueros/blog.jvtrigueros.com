@@ -70,7 +70,7 @@ needed.
 Before deploying, we need to setup `s3_website.yml`:
 
 ```bash
-> docker run --rm -v %cd%/src:/srv/jekyll jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+> docker run --rm -it -v %cd%/src:/srv/jekyll jekyll/jekyll:builder bash
 > jekyll --help # This will install Java
 > s3_website cfg create # This will create s3_website.yml, edit the yml file with correct creds
 > s3_website cfg apply # This will create the s3 bucket etc
@@ -91,7 +91,7 @@ In order for `s3_website` to be able to push to S3, it needs Java installed. So 
 
 To deploy, the command is similar to the one above, but it'll only do the build and push:
 
-    docker run --rm -v %cd%/src:/srv/jekyll -v %cd%/apk.txt:/srv/jekyll/.apk -e S3_ID=... -e S3_SECRET=... jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
+    docker run --rm -v %cd%/src:/srv/jekyll -v %cd%/apk.txt:/srv/jekyll/.apk -e S3_ID=... -e S3_SECRET=... -e JEKYLL_ENV=production jekyll/jekyll:builder bash -c "jekyll build; s3_website push"
 
 The previous command is great for CI/CD, but if you'll be donig a lot of pushing locally, build a
 deploy image:
