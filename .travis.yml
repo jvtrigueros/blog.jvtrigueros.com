@@ -1,0 +1,19 @@
+sudo: required
+
+services:
+  - docker
+
+language:
+  - ruby
+
+before_install:
+  - docker pull jekyll/jekyll:builder
+
+script:
+  - docker run --rm --name jk -d -v $PWD/src:/srv/jekyll -v $PWD/apk.txt:/srv/jekyll/.apk -e S3_ID=$S3_ID -e S3_SECRET=$S3_SECRET -e JEKYLL_ENV=$JEKYLL_ENV jekyll/jekyll:builder
+  - docker exec jk bash -c "jekyll build"
+
+deploy:
+  - docker exec jk bash -c "find _site/assets/ -type f -name *.png -exec convert {} -strip {} \;"
+  - docker exec jk bash -c "find _site/assets/ -type f -name *.jpg -exec convert {} -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB {} \;"
+  - docker exec jk bash -c "s3_website push"
