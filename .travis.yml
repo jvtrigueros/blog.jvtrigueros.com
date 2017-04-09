@@ -8,8 +8,6 @@ language:
 
 before_install:
   - docker pull jekyll/jekyll:builder
-  - docker run --name jk -d -v $PWD/src:/srv/jekyll -v $PWD/apk.txt:/srv/jekyll/.apk -e S3_ID=$S3_ID -e S3_SECRET=$S3_SECRET -e JEKYLL_ENV=$JEKYLL_ENV jekyll/jekyll:builder bash
 
 script:
-  - docker exec jk bash -c "jekyll build"
-
+  - docker run --rm -v $PWD/src:/srv/jekyll -v $PWD/apk.txt:/srv/jekyll/.apk -v $PWD/build.sh:/srv/jekyll/build.sh -e S3_ID=$S3_ID -e S3_SECRET=$S3_SECRET -e JEKYLL_ENV=$JEKYLL_ENV --entrypoint /srv/jekyll/build.sh jekyll/jekyll:builder

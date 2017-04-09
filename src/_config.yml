@@ -39,3 +39,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - s3_website.yml
+  - build.sh
