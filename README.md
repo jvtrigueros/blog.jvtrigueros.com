@@ -64,6 +64,19 @@ you to `alt+tab` boo. This can be solved by installing `browser-sync` and have i
 
 ## Deploying
 
+### Image Optimization
+
+Just adding some notes here, I'm destroying the flow, I'll fix later.
+
+For PNGs or GIFs:
+
+    find _site/assets/ -type f -name *.png -exec convert {} -strip {} \;
+    find _site/assets/ -type f -name *.gif -exec convert {} -strip {} \;
+
+For JPEGs:
+
+    find _site/assets/ -type f -name *.jpg -exec convert {} -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB {} \;
+
 For deployment, we want to use the `jekyll/jekyll:builder` image because it installs `s3_website` plus other niceties if
 needed.
 
