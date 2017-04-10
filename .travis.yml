@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 
-gemfile=$TRAVIS_BUILD_DIR/src/Gemfile
+gemfile: $TRAVIS_BUILD_DIR/src/Gemfile
 
 script:
   - bundle exec jekyll build
