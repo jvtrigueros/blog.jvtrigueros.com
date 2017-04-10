@@ -1,13 +1,10 @@
-sudo: required
+language: ruby
+cache: bundler
 
-services:
-  - docker
-
-language:
-  - ruby
-
-before_install:
-  - docker pull jekyll/jekyll:builder
+gemfile=$TRAVIS_BUILD_DIR/src/Gemfile
 
 script:
-  - docker run --rm -v $PWD/src:/srv/jekyll -v $PWD/apk.txt:/srv/jekyll/.apk -v $PWD/build.sh:/srv/jekyll/build.sh -e S3_ID=$S3_ID -e S3_SECRET=$S3_SECRET -e JEKYLL_ENV=$JEKYLL_ENV --entrypoint /srv/jekyll/build.sh jekyll/jekyll:builder
+  - bundle exec jekyll build
+  - find $TRAVIS_BUILD_DIR/_site/assets/ -type f -name *.png -exec convert {} -strip {} \;
+  - find $TRAVIS_BUILD_DIR/_site/assets/ -type f -name *.jpg -exec convert {} -sampling-factor 4:2:0 -strip -quality 85 -interlace JPEG -colorspace RGB {} \;
+  - bundle exec s3_website push
