@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Jekyll Docker Environment
+date: 2017-07-12
+categories: docker jekyll
 ---
 
 As you may already know, Windows is my preferred operating system. Ever since Windows 10, the UI has
