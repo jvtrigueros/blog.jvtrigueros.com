@@ -30,7 +30,7 @@ sass:
   style: :compressed
   sass_dir: _sass
 
-gems:
+plugins:
   - jekyll-paginate
 
 markdown: redcarpet
