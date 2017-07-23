@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Batch Rename using PowerShell
+date: 2017-07-22
 categories: powershell scripts
 ---
 
