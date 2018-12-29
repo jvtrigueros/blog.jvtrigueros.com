@@ -5,3 +5,8 @@ _site
 .env
 
 src/.apk
+
+letsencrypt/config
+letsencrypt/logs
+letsencrypt/work
+letsencrypt/credentials.sh
