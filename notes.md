@@ -119,3 +119,7 @@ A few things to note about this approach:
 - The `jekyll/jekyll:deploy` only lives locally and it needs to be created on any new machine
 - This assumes that the `_site` directory already exists via calling `jekyll build` manually or
   having an external process build it, such as the container in the Developing section.
+
+## WSL
+
+Now that I'm using WSL a lot of the notes above are not that relevant however, most of the workflow has been ported to a Makefile. I've converted the batch files into make tasks.
