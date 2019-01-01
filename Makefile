@@ -1,9 +1,14 @@
 JEKYLL_VERSION=3.8.5
+JEKYLL_CMD=docker exec jk bundle exec jekyll
 
 # https://github.com/jekyll/jekyll-compose
 draft:
 	@echo Creating draft "$(name)"
-	docker exec jk bundle exec jekyll draft "$(name)"
+	$(JEKYLL_CMD) draft "$(name)"
+
+publish:
+	@echo Publishing draft "$(name)"
+	$(JEKYLL_CMD) publish "_drafts/$(name)"
 
 start:
 	docker run \
