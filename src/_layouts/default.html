@@ -3,16 +3,20 @@ layout: compress
 ---
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include head.html %}
-    {% include favicon.html %}
-  </head>
-  <body class="{{ page.slug }}">
-    <main class="main">
-      {% include header.html %}
-      {{ content }}
-      {% include footer.html %}
-    </main>
-    <script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
-  </body>
+
+<head>
+  {% include head.html %}
+  {% include favicon.html %}
+</head>
+
+<body class="{{ page.slug }}">
+  <main class="main">
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+  </main>
+  <script src="//instant.page/1.2.2" type="module"
+    integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+</body>
+
 </html>
