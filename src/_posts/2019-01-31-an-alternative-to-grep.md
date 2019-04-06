@@ -3,6 +3,11 @@ layout: post
 title: An Alternative to grep
 categories: linux grep
 ---
+---
+
+> As mentioned in the comments by [@samatjain](https://twitter.com/samatjain), `ripgrep` is a much faster alternative to both `the_silver_searcher` and `ack`. I've left this here for historical purposes.
+
+---
 
 If you spend any amount of time using a terminal, you have more than likely used `grep` to search for phrases or words
 in a pile of text files. `grep` is a great tool and it's installed by default on many servers, but if you're a developer,
