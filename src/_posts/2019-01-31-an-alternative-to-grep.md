@@ -9,7 +9,7 @@ in a pile of text files. `grep` is a great tool and it's installed by default on
 `grep` doesn't do much aside from a simple text search.
 
 As they say, you gotta use the right tool for the job, for this `ack` is the tool that's very commonly recommended, but
-it's less commonly installed. Since we're already needing to install something, I recommend using (The Silver Searcher)[https://github.com/ggreer/the_silver_searcher].
+it's less commonly installed. Since we're already needing to install something, I recommend using [The Silver Searcher](https://github.com/ggreer/the_silver_searcher).
 
 ## The Silver Searcher
 
@@ -68,7 +68,7 @@ src/silver_demo/core.clj
 `--clojure`, then only Clojure files will be searched. In this case, there are two matches, we get the file path and the
 line number of where that word was found.
 
-That's it! 
+That's it!
 
 I find myself using this pattern most of the time, IDEs can also do this, but doing this across multiple projects or a
 big codebase is rarely a good experience.
