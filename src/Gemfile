@@ -5,11 +5,11 @@ source 'http://rubygems.org'
 group :development do
   gem 'sass', '~> 3.4.25'
   gem 'jekyll', '~> 3.8.5'
-  gem 'jekyll-paginate', '~> 1.1.0'
   gem 'redcarpet', '~> 3.4.0'
   gem 's3_website', '~> 3.4.0'
 end
 
 group :jekyll_plugins do
   gem 'jekyll-compose'
+  gem 'jekyll-paginate'
 end
