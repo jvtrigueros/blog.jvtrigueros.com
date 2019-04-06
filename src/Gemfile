@@ -7,7 +7,7 @@ group :development do
   gem 'jekyll', '~> 3.8.5'
   gem 'jekyll-paginate', '~> 1.1.0'
   gem 'redcarpet', '~> 3.4.0'
-  gem 's3_website'
+  gem 's3_website', '~> 3.4.0'
 end
 
 group :jekyll_plugins do
