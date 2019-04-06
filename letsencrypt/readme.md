@@ -5,6 +5,13 @@ keep forgetting how to, so here's an attempt to capture the latest working instr
 
 These instructions assume you're on WSL
 
+You first need to install `letsencrypt` and `letsencrypt-s3front`
+https://github.com/waylonflinn/letsencrypt-s3front
+```bash
+python -m pip install --user letsencrypt
+python -m pip install --user letsencrypt-s3front
+```
+
 ```bash
 python -m pip install --user boto3
 source credentials.sh
