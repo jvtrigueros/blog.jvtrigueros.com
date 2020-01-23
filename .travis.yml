@@ -2,6 +2,8 @@ sudo: false
 language: ruby
 rvm:
   - 2.6
+jdk:
+  - openjdk8
 cache: bundler
 gemfile: src/Gemfile
 
