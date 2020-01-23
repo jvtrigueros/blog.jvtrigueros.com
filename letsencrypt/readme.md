@@ -12,6 +12,19 @@ python -m pip install --user letsencrypt
 python -m pip install --user letsencrypt-s3front
 ```
 
+Store AWS credentials
+```bash
+mkdir ~/.aws
+vim ~/.aws/credentials
+```
+
+Put this in the file:
+```
+[default]
+aws_access_key_id=...
+aws_secret_access_key=...
+```
+
 ```bash
 python -m pip install --user boto3
 source credentials.sh

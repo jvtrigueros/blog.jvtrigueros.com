@@ -1,3 +1,5 @@
+#! /bin/bash
+
 ~/.local/bin/letsencrypt --config-dir ./config --work-dir ./work --logs-dir ./logs \
     --renew-by-default --text \
     --agree-tos -a letsencrypt-s3front:auth \
