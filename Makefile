@@ -1,4 +1,4 @@
-JEKYLL_VERSION=3.8.5
+JEKYLL_VERSION=3.8
 JEKYLL_CMD=docker exec jk bundle exec jekyll
 
 # https://github.com/jekyll/jekyll-compose
@@ -36,7 +36,7 @@ update:
 
 watch:
 	@echo Watching Jekyll development website on http://localhost:3000
-	browser-sync start \
+	npx browser-sync start \
 	-s $(PWD)/src/_site \
 	-f $(PWD)/src/_site \
 	--reload-debounce 500 --no-open
