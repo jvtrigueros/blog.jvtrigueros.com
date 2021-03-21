@@ -10,3 +10,5 @@ letsencrypt/config
 letsencrypt/logs
 letsencrypt/work
 letsencrypt/credentials.sh
+
+node_modules/
