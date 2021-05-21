@@ -9,7 +9,7 @@ You first need to install `letsencrypt` and `letsencrypt-s3front`
 https://github.com/waylonflinn/letsencrypt-s3front
 ```bash
 python -m pip install --user letsencrypt
-python -m pip install --user letsencrypt-s3front
+python -m pip install --user certbot-s3front
 ```
 
 Store AWS credentials
