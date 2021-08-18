@@ -12,3 +12,4 @@ letsencrypt/work
 letsencrypt/credentials.sh
 
 node_modules/
+/src/.jekyll-cache/
