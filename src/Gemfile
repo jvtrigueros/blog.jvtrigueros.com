@@ -4,7 +4,6 @@ group :development do
   gem 'sass', '~> 3.4.25'
   gem 'jekyll', '~> 3.9.0'
   gem 'redcarpet', '~> 3.5.1'
-  gem 's3_website', '~> 3.4.0'
 end
 
 group :jekyll_plugins do
