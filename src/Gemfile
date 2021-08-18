@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 group :development do
   gem 'sass', '~> 3.4.25'
-  gem 'jekyll', '~> 3.9.0'
-  gem 'redcarpet', '~> 3.5.1'
+  gem 'jekyll', '~> 4.2.0'
+  gem "webrick", "~> 1.7"
 end
 
 group :jekyll_plugins do
