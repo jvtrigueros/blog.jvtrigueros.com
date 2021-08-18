@@ -1,2 +1,0 @@
-openjdk8-jre@community
-imagemagick
