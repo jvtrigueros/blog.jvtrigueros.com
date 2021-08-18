@@ -141,4 +141,4 @@ So to make sure everything is good to go run:
 bundle install
 ```
 
-Then from now on use `bundle exec jekyll` for Jekyll commands.
+ To see the available commands run `just --list`.
