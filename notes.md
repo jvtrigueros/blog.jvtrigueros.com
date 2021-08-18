@@ -123,3 +123,22 @@ A few things to note about this approach:
 ## WSL
 
 Now that I'm using WSL a lot of the notes above are not that relevant however, most of the workflow has been ported to a Makefile. I've converted the batch files into make tasks.
+
+## WSL2
+
+So now I'm using WSL2, but it's the same as WSL, the only difference is that I'm using LinuxBrew which makes it a bit simpler to manage dependencies.
+
+For this to work, we need to be running Ruby 2.6:
+
+```sh
+brew install ruby
+```
+
+Then everything must be done in the `src` directory.
+
+So to make sure everything is good to go run:
+```sh
+bundle install
+```
+
+Then from now on use `bundle exec jekyll` for Jekyll commands.
