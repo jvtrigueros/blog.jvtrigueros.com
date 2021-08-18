@@ -30,7 +30,7 @@ sass:
   style: :compressed
   sass_dir: _sass
 
-markdown: redcarpet
+markdown: kramdown
 
 exclude:
   - Gemfile
