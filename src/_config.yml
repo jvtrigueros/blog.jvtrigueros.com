@@ -35,5 +35,4 @@ markdown: redcarpet
 exclude:
   - Gemfile
   - Gemfile.lock
-  - s3_website.yml
   - vendor
