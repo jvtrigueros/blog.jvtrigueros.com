@@ -1,8 +1,6 @@
 # blog.jvtrigueros.com
 > Thoughts of a software developer
 
-[![Build Status](https://travis-ci.org/jvtrigueros/blog.jvtrigueros.com.svg?branch=master)](https://travis-ci.org/jvtrigueros/blog.jvtrigueros.com)
-
 Blog.
 
 There's really not much to say here, this blog is powered by Jekyll, Docker, and Amazon S3.
