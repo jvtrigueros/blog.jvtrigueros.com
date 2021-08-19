@@ -2,6 +2,10 @@
 serve:
     cd ./src && bundle exec jekyll serve --drafts --force_polling --livereload
 
+# Build the Jekyll page in production mode
+build:
+    cd ./src && JEKYLL_ENV=production bundle exec jekyll build
+
 # Creates a draft under `./src/_drafts/{{draft}}.md`
 @create-draft draft:
     echo Creating draft "{{draft}}"
