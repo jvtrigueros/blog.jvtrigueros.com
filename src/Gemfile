@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 group :development do
-  gem 'sass', '~> 3.4.25'
   gem 'jekyll', '~> 4.2.0'
   gem "webrick", "~> 1.7"
 end
