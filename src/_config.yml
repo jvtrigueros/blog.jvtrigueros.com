@@ -14,7 +14,7 @@ github: https://github.com/jvtrigueros/blog.jvtrigueros.com
 disqus_shortname: grain-blog
 google_analytics: UA-59713858-1
 
-paginate: 2
+paginate: 5
 paginate_path: "/page/:num"
 permalink: /:year/:month/:day/:title/
 
