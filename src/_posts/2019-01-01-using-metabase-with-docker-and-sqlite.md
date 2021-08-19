@@ -63,7 +63,7 @@ ENV VERSION 0.31.2
 WORKDIR /app
 
 ADD https://raw.githubusercontent.com/metabase/metabase/v$VERSION/bin/start /app/bin/
-ADD http://downloads.metabase.com/v$VERSION/metabase.jar /app/target/uberjar/
+ADD https://downloads.metabase.com/v$VERSION/metabase.jar /app/target/uberjar/
 
 CMD ["bash", "/app/bin/start"]
 ```

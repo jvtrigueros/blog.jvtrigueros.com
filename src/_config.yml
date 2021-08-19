@@ -1,14 +1,14 @@
 # Site settings
 title: Grain
 description: Thoughts of a Software Developer
-url: http://blog.jvtrigueros.com
+url: https://blog.jvtrigueros.com
 
 author:
   name     : Jose V. Trigueros
   email    : j.v.trigueros+blog@gmail.com
-  url      : http://blog.jvtrigueros.com
+  url      : https://blog.jvtrigueros.com
   linkedin : https://www.linkedin.com/in/jvtrigueros/
-  twitter  : http://twitter.com/jvtrigueros
+  twitter  : https://twitter.com/jvtrigueros
 
 github: https://github.com/jvtrigueros/blog.jvtrigueros.com
 disqus_shortname: grain-blog
