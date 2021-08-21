@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Java Localization: Indonesia'
+date: 2021-08-23 07:16 -0700
 ---
-
 Recently, I went through the exercise of externalizing the strings on a Discord bot, [pawa](https://pawa.im), so that
 I can provide different translations. Since this is a JVM code base, the preferred path is to use a
 [`ResourceBundle`](https://docs.oracle.com/javase/tutorial/i18n/resbundle/concept.html). This would allow me to have
