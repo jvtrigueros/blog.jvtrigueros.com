@@ -1,6 +1,6 @@
 # Start a Jekyll development server with livereload
 serve:
-    cd ./src && bundle exec jekyll serve --drafts --force_polling --livereload
+    cd ./src && bundle exec jekyll serve --drafts --future --force_polling --livereload
 
 # Build the Jekyll page in production mode
 build:
