@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Java Localization: Indonesia'
-date: 2021-08-23 07:16 -0700
+date: 2021-08-23 17:16 -0700
 ---
 Recently, I went through the exercise of externalizing the strings on a Discord bot, [pawa](https://pawa.im), so that
 I can provide different translations. Since this is a JVM code base, the preferred path is to use a
@@ -130,7 +130,8 @@ src/main/resources
 └── strings_ind.properties
 ```
 
-```kotlin  // Indonesian Bundle
+```kotlin 
+  // Indonesian Bundle
   bundle = ResourceBundle.getBundle("strings", Locale("ind"))
   greeting = bundle.getString("greeting")
 
