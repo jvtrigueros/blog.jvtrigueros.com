@@ -3,7 +3,17 @@
 
 Blog.
 
-There's really not much to say here, this blog is powered by Jekyll, Docker, and Amazon S3.
+There's really not much to say here, this blog powered by Jekyll and Cloudflare. 
+
+## Getting Started
+
+Install [just](https://github.com/casey/just) and run:
+
+``` sh
+just --list
+```
+
+To get a list of all the available commands. Also see [notes.md](notes.md) for a log of notes over the years.
 
 # License
 
