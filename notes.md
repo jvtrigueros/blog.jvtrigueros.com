@@ -128,10 +128,10 @@ Now that I'm using WSL a lot of the notes above are not that relevant however, m
 
 So now I'm using WSL2, but it's the same as WSL, the only difference is that I'm using LinuxBrew which makes it a bit simpler to manage dependencies.
 
-For this to work, we need to be running Ruby 2.6:
+For this to work, we need to be running Ruby 2.7:
 
 ```sh
-brew install ruby
+brew install ruby@2.7
 ```
 
 Then everything must be done in the `src` directory.
