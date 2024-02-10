@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'google-protobuf', '= 4.26.0.rc.2'
+
 group :development do
   gem 'jekyll', '~> 4.3.3'
-  gem "webrick", "~> 1.7"
+  gem 'webrick', '~> 1.7'
 end
 
 group :jekyll_plugins do
