@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'google-protobuf', '= 4.26.0.rc.2'
+gem 'google-protobuf', '~> 4.26.0.rc.2'
 
 group :development do
   gem 'jekyll', '~> 4.3.3'

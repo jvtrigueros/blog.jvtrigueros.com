@@ -69,7 +69,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  google-protobuf (= 4.26.0.rc.2)
+  google-protobuf (~> 4.26.0.rc.2)
   jekyll (~> 4.3.3)
   jekyll-compose
   jekyll-paginate
