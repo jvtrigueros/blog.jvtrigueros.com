@@ -15,3 +15,7 @@ build:
 @publish-draft draft:
     echo Publishing draft "{{draft}}"
     cd ./src && bundle exec jekyll publish "_drafts/{{draft}}.md"
+
+# Perform a Bundler update
+update:
+    cd ./src && bundle update
