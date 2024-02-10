@@ -7,6 +7,13 @@ There's really not much to say here, this blog powered by Jekyll and Cloudflare.
 
 ## Getting Started
 
+Install Ruby using [asdf-ruby](https://github.com/asdf-vm/asdf-ruby), then install dependencies:
+
+``` sh
+asdf install ruby # See .tool-versions for version this must match Cloudflare
+cd src && bundle install
+```
+
 Install [just](https://github.com/casey/just) and run:
 
 ``` sh
