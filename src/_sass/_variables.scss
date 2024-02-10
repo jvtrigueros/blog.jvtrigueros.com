@@ -13,7 +13,7 @@ $line-height-base  : 1.6 !default;
 $small-font-size   : $font-size-base * 0.875 !default;
 
 $spacing-unit : 30px !default;
-$padding-unit : ($spacing-unit/2) !default;
+$padding-unit : calc($spacing-unit / 2) !default;
 
 $font-weight-base  : 400 !default;
 $font-weight-bold  : 700 !default;
