@@ -8,7 +8,7 @@ Recently, I discussed with a friend how they organize their docker-compose stack
 their personal home lab.They told me they used [Portainer](https://docs.portainer.io/)
 to manage all their containers. So I decided to give it a go.
 
-At first glance, it seemed similar to what I already had: a `tmux`` session, with each
+At first glance, it seemed similar to what I already had: a `tmux` session, with each
 `docker-compose` stack in its pane. But then I saw that you can setup a Portainer stack
 by pointing it to a Git repository. Now this is more appealing! Doing this allows the
 following:
